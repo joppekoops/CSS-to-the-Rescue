@@ -3,7 +3,7 @@
 ## 💡Mijn Idee
 Voor mijn opdracht gebruik ik de volgende live video mixer als inspiratie voor mijn digitale control panel:
 
-| ![Panasonic video mixer](./readme-images/video-mixer_1.webp) | ![Panasonic video mixer top view](./readme-images/video-mixer_1.webp) |
+| ![Panasonic video mixer](./readme-images/video-mixer_1.webp) | ![Panasonic video mixer top view](./readme-images/video-mixer_2.webp) |
 | --- | --- |
 | Panasonic video mixer | Panasonic video mixer top view |
 
