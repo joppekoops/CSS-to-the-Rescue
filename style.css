@@ -71,6 +71,7 @@ section:nth-of-type(2) div:nth-of-type(1) {
 	width: 8rem;
 	background-color: #fff5;
 	border-radius: 100%;
+	user-select: none;
 }
 
 section:nth-of-type(2) div:nth-of-type(1) button {
@@ -106,7 +107,7 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 	}
 
 	& section:nth-of-type(2) div:nth-of-type(1) div {
-		transform: translateX(-66%) translateY(-66%);
+		transform: translateX(-67%) translateY(-67%);
 	}
 }
 
@@ -157,6 +158,6 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 	}
 
 	& section:nth-of-type(2) div:nth-of-type(1) div {
-		transform: translateX(66%) translateY(66%);
+		transform: translateX(67%) translateY(67%);
 	}
 }
