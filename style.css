@@ -1,0 +1,162 @@
+body {
+	display: grid;
+	place-items: center;
+}
+
+main {
+	background-color: black;
+	padding: 2rem;
+	display: grid;
+	gap: 2rem;
+}
+
+section:first-of-type {
+	aspect-ratio: 16 / 9;
+	width: 24rem;
+	background: white;
+	container-name: screen;
+	container-type: size;
+}
+
+section:first-of-type div:first-of-type {
+	--x-speed: 10s;
+	--y-speed: 10s;
+
+	animation-name: move-graphic-y;
+	animation-duration: var(--y-speed);
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+	animation-play-state: paused;
+	animation-delay: calc(var(--y-speed) / -2);
+}
+
+section:first-of-type div:first-of-type div {
+	aspect-ratio: 1;
+	background: red;
+	width: 3em;
+
+	animation-name: move-graphic-x;
+	animation-duration: var(--x-speed);
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+	animation-play-state: paused;
+	animation-delay: calc(var(--x-speed) / -2);
+}
+
+@keyframes move-graphic-x {
+	0% {
+		transform: translateX(calc(0cqw - 0%));
+	}
+
+	100% {
+		transform: translateX(calc(100cqw - 100%));
+	}
+}
+
+@keyframes move-graphic-y {
+	0% {
+		transform: translateY(calc(0cqh - 0%));
+	}
+
+	100% {
+		transform: translateY(calc(100cqh - 100%));
+	}
+}
+
+section:nth-of-type(2) div:nth-of-type(1) {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	aspect-ratio: 1;
+	width: 8rem;
+	background-color: #fff5;
+	border-radius: 100%;
+}
+
+section:nth-of-type(2) div:nth-of-type(1) button {
+	border: none;
+	background: none;
+}
+
+section:nth-of-type(2) div:nth-of-type(1) button:nth-child(5) {
+	grid-column: 3;
+
+}
+
+section:nth-of-type(2) div:nth-of-type(1) div {
+	background: white;
+	border-radius: 100%;
+	transition: .2s;
+	pointer-events: none;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+}
+
+body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(1):hover) {
+
+	& section:nth-of-type(1) div:first-of-type {
+		animation-play-state: running;
+		animation-direction: reverse;
+
+		& div {
+			animation-play-state: running;
+			animation-direction: reverse;
+		}
+	}
+
+	& section:nth-of-type(2) div:nth-of-type(1) div {
+		transform: translateX(-66%) translateY(-66%);
+	}
+}
+
+body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(4):hover) {
+
+	& section:nth-of-type(1) div:first-of-type {
+		animation-play-state: paused;
+		animation-direction: ;
+
+		& div {
+			animation-play-state: running;
+			animation-direction: reverse;
+		}
+	}
+
+	& section:nth-of-type(2) div:nth-of-type(1) div {
+		transform: translateX(-100%);
+	}
+}
+
+body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(6):hover) {
+
+	& section:nth-of-type(1) div:first-of-type {
+		animation-play-state: paused;
+		animation-direction: ;
+
+		& div {
+			animation-play-state: running;
+			animation-direction: ;
+		}
+	}
+
+	& section:nth-of-type(2) div:nth-of-type(1) div {
+		transform: translateX(100%);
+	}
+}
+
+body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(9):hover) {
+
+	& section:nth-of-type(1) div:first-of-type {
+		animation-play-state: running;
+		animation-direction: ;
+
+		& div {
+			animation-play-state: running;
+			animation-direction: ;
+		}
+	}
+
+	& section:nth-of-type(2) div:nth-of-type(1) div {
+		transform: translateX(66%) translateY(66%);
+	}
+}
