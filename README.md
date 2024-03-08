@@ -62,7 +62,7 @@ Hierbij ontstonden een aantal problemen:
 | --- | --- |
 | Dit werkt! | Maar dit helaas niet |
 
-Om dit nog op te lossen heb ik gezocht naar een codepen waar het wel werkt. Deze lijkst op wat ik wil doen:
+Om dit nog op te lossen heb ik gezocht naar een CodePen waar het wel werkt. Deze lijkt op wat ik wil doen:
 https://codepen.io/jkantner/pen/abOBdgV
 
 Deze is wel in *Sass* geschreven en de gecompileerde CSS is heel erg lang. Sanne heeft het voor mij geabstraheerd tot alleen de kern functionaliteit:
@@ -72,7 +72,7 @@ https://codepen.io/shooft/pen/zYXvLoO
 ### ✏️ Vormgeving
 Mijn doel was om de *controller* (inclusief de *joystick*) een **3 dimensionaal** effect te geven. 
 
-Om het **daadwerkelijk 3d** te maken, ging ik met **perspective** aan de gang. Eerst had ik alles een perspective gegeven, maar hierdoor werkte niet alles zoals het hoort te werken. Hier kwam ik achter omdat de onderkant van de controller niet goed gedraaid wilde worden.
+Om het **daadwerkelijk 3D** te maken, ging ik met ***perspective*** aan de gang. Eerst had ik alles een *perspective* gegeven, maar hierdoor werkte niet alles zoals het hoort te werken. Hier kwam ik achter omdat de onderkant van de controller niet goed gedraaid wilde worden.
 
 | ![onderkant die niet goed draait](./readme-images/onderkant-fout.webp) |
 | --- |
@@ -81,12 +81,15 @@ Om het **daadwerkelijk 3d** te maken, ging ik met **perspective** aan de gang. E
 In plaats van dat die 90° ten opzichte van de hele controller gedraaid moest worden, was dit 70°. Het kwam er op neer dat ik 3D niet goed begreep. Voor 3D in CSS, geef je alleen de hele scene of het hele object een `perspective`. Vervolgens moeten alle element hierin die ook 3D zijn `transform-style: preserve-3d;` krijgen. Er zijn nog een aantal dingen waarmee dit niet samen kan, zie het volgende artikel: 
 https://css-tricks.com/things-watch-working-css-3d/
 
-Iets 3 dimensionaals lijkt niet echt 3D zonder dat de **belichting** klopt. Hiervoor heb ik op belichte vlakken **gradients** gebruikt. Deze zijn heel subtiel, maar net genoeg om het een beetje glanzend te laten lijken.
+Iets 3 dimensionaals lijkt niet echt 3D zonder dat de **belichting** klopt. Hiervoor heb ik op belichte vlakken ***gradients*** gebruikt. Deze zijn heel subtiel, maar net genoeg om het een beetje glanzend te laten lijken.
 
 Zo ging ik van ongestijld, naar meer realistisch:
 
 | ![joystick ongestijld](./readme-images/joystick.webp) | ![joystick 3d gestijld](./readme-images/joystick-3d-1.webp) |
 | --- | --- |
-| *joystick ongestijld* | *joystick 3d gestijld* |
+| *Joystick ongestijld* | *Joystick 3D gestijld* |
 
-Verder wilde ik nog een patroonje toevoegen, zoals ook op de originele foto van de mixer. Hiervoor heb ik verschillende dingen geprobeerd in deze codepen: https://codepen.io/jkhvacmd/pen/rNbVQeB, maar alles werd nog te veel herhalend.
+Verder wilde ik nog een patroontje toevoegen, zoals ook op de originele foto van de mixer. Hiervoor heb ik verschillende dingen geprobeerd in deze *CodePen*: https://codepen.io/jkhvacmd/pen/rNbVQeB, maar alles werd nog te veel herhalend.
+
+
+De *joystick* is nog niet helemaal af. Hij moet nog een steeltje hebben om er helemaal logisch uit te zien. Nu is het een soort zwevende control. Bovendien moet de werking nog gefixt. Gelukkig heb ik inmiddels een voorbeeld waar dit wel werkt.
