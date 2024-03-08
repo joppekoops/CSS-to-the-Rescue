@@ -85,7 +85,7 @@ Iets 3 dimensionaals lijkt niet echt 3D zonder dat de **belichting** klopt. Hier
 
 Zo ging ik van ongestijld, naar meer realistisch:
 
-| ![joystick ongestijld](./readme-images/joystick.webp) | ![joystick 3d gestijld](./readme-images/joystick-3d.webp) |
+| ![joystick ongestijld](./readme-images/joystick.webp) | ![joystick 3d gestijld](./readme-images/joystick-3d-1.webp) |
 | --- | --- |
 | *joystick ongestijld* | *joystick 3d gestijld* |
 
