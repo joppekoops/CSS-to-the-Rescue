@@ -23,6 +23,8 @@ Als een volgende stap zou ik de *slider* kunnen maken die de overgang tussen bee
 
 Later kan ik altijd nog andere elementen toevoegen zoals de draaiknopjes, die bijvoorbeeld de grootte van het element kunnen aanpassen.
 
+
+
 ## 👨‍💻 Voortgang 1 (01-03-2024)
 Vandaag hebben we onze ideeën doorgesproken. Daaruit kwamen een aantal vragen en tips om te kunnen beginnen.
 
@@ -31,6 +33,8 @@ Vandaag hebben we onze ideeën doorgesproken. Daaruit kwamen een aantal vragen e
 - Het blokje kan je een animatie geven voor helemaal van links naar rechts. Die kan je vervolgens op pauze te zetten als er niets wordt ingedrukt en voorwaarts of achterwaarts afspelen als de *joystick* naar links of rechts gaat. Ditzelfde kan dan voor naar boven en beneden. Je kan tegenwoordig twee animaties op één element zetten, of je kan er nog een *div*-element omheen zetten.
 
 Jop maakt toevallig ook een *joystick*, hoewel hij juist wil dat de *joystick* blijft staan als je die loslaat. Dat gaat waarschijnlijk werken met een verticale en een horizontale *slider*.
+
+
 
 ## 🕹️ De *joystick* maken
 
@@ -64,3 +68,25 @@ https://codepen.io/jkantner/pen/abOBdgV
 Deze is wel in *Sass* geschreven en de gecompileerde CSS is heel erg lang. Sanne heeft het voor mij geabstraheerd tot alleen de kern functionaliteit:
 https://codepen.io/shooft/pen/bGJVjBM
 https://codepen.io/shooft/pen/zYXvLoO
+
+### ✏️ Vormgeving
+Mijn doel was om de *controller* (inclusief de *joystick*) een **3 dimensionaal** effect te geven. 
+
+Om het **daadwerkelijk 3d** te maken, ging ik met **perspective** aan de gang. Eerst had ik alles een perspective gegeven, maar hierdoor werkte niet alles zoals het hoort te werken. Hier kwam ik achter omdat de onderkant van de controller niet goed gedraaid wilde worden.
+
+| ![onderkant die niet goed draait](./readme-images/onderkant-fout.webp) |
+| --- |
+| Onderkant die niet goed draait |
+
+In plaats van dat die 90° ten opzichte van de hele controller gedraaid moest worden, was dit 70°. Het kwam er op neer dat ik 3D niet goed begreep. Voor 3D in CSS, geef je alleen de hele scene of het hele object een `perspective`. Vervolgens moeten alle element hierin die ook 3D zijn `transform-style: preserve-3d;` krijgen. Er zijn nog een aantal dingen waarmee dit niet samen kan, zie het volgende artikel: 
+https://css-tricks.com/things-watch-working-css-3d/
+
+Iets 3 dimensionaals lijkt niet echt 3D zonder dat de **belichting** klopt. Hiervoor heb ik op belichte vlakken **gradients** gebruikt. Deze zijn heel subtiel, maar net genoeg om het een beetje glanzend te laten lijken.
+
+Zo ging ik van ongestijld, naar meer realistisch:
+
+| ![joystick ongestijld](./joystick.webp) | ![joystick 3d gestijld](./joystick-3d.webp) |
+| --- | --- |
+| *joystick ongestijld* | *joystick 3d gestijld* |
+
+Verder wilde ik nog een patroonje toevoegen, zoals ook op de originele foto van de mixer. Hiervoor heb ik verschillende dingen geprobeerd in deze codepen: https://codepen.io/jkhvacmd/pen/rNbVQeB, maar alles werd nog te veel herhalend.
