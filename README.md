@@ -2,7 +2,7 @@
 
 ## De opdracht
 
-## 💡Mijn Idee
+## 💡 Mijn Idee
 Voor mijn opdracht gebruik ik de volgende live video mixer als inspiratie voor mijn digitale control panel:
 
 | ![Panasonic video mixer](./readme-images/video-mixer_1.webp) | ![Panasonic video mixer top view](./readme-images/video-mixer_2.webp) |
@@ -23,7 +23,7 @@ Als een volgende stap zou ik de *slider* kunnen maken die de overgang tussen bee
 
 Later kan ik altijd nog andere elementen toevoegen zoals de draaiknopjes, die bijvoorbeeld de grootte van het element kunnen aanpassen.
 
-## 👨‍💻Voortgang 1 (01-03-2024)
+## 👨‍💻 Voortgang 1 (01-03-2024)
 Vandaag hebben we onze ideeën doorgesproken. Daaruit kwamen een aantal vragen en tips om te kunnen beginnen.
 
 - Wil je dat de *joystick* weer teruggaat naar het midden of dat de *joystick* blijft staan in de positie waarin je die zet?
@@ -32,9 +32,9 @@ Vandaag hebben we onze ideeën doorgesproken. Daaruit kwamen een aantal vragen e
 
 Jop maakt toevallig ook een *joystick*, hoewel hij juist wil dat de *joystick* blijft staan als je die loslaat. Dat gaat waarschijnlijk werken met een verticale en een horizontale *slider*.
 
-## 🕹️De *joystick* maken
+## 🕹️ De *joystick* maken
 
-### ⚙️Mechaniek
+### ⚙️ Werking
 | ![Joystick met 8 buttons er omheen](./readme-images/joystick.webp) |
 | --- |
 | *Joystick* met 8 buttons er omheen |
@@ -57,3 +57,10 @@ Hierbij ontstonden een aantal problemen:
 |<video src="./readme-images/joystick-try_1.mov"/>|<video src="./readme-images/joystick-try_1-issue.mov"/>|
 | --- | --- |
 | Dit werkt! | Maar dit helaas niet |
+
+Om dit nog op te lossen heb ik gezocht naar een codepen waar het wel werkt. Deze lijkst op wat ik wil doen:
+https://codepen.io/jkantner/pen/abOBdgV
+
+Deze is wel in *Sass* geschreven en de gecompileerde CSS is heel erg lang. Sanne heeft het voor mij geabstraheerd tot alleen de kern functionaliteit:
+https://codepen.io/shooft/pen/bGJVjBM
+https://codepen.io/shooft/pen/zYXvLoO
