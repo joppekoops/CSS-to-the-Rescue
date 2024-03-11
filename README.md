@@ -93,3 +93,15 @@ Verder wilde ik nog een patroontje toevoegen, zoals ook op de originele foto van
 
 
 De *joystick* is nog niet helemaal af. Hij moet nog een steeltje hebben om er helemaal logisch uit te zien. Nu is het een soort zwevende control. Bovendien moet de werking nog gefixt. Gelukkig heb ik inmiddels een voorbeeld waar dit wel werkt.
+
+
+
+## 👨‍💻 Voortgang 2 (08-03-2024)
+Vandaag hebben we laten zien hoe ver we waren met het maken en wat we er verder nog mee gaan doen.
+
+Ik ga beginnen met het steeltje maken voor de *joystick* en het aanpassen van de functionaliteit naar de manier waarop het voorbeeld wat ik had gevonden het deed. Dit kan op twee manieren:
+
+- Het kan zoals ik nu heb met twee *div*jes.
+- Het kan ook door de animaties bij elkaar op te tellen met *animation compositions*.
+
+Iets anders wat ik nog toe kan voegen is kleine animaties op de *joystick*. Bijvoorbeeld dat als die terugspringt dat die dan even *bounced*. Dit kan met CSS *linear timing functions*: `linear()`.
