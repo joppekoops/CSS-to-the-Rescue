@@ -58,9 +58,13 @@ Hierbij ontstonden een aantal problemen:
 1. Je kan tegenwoordig **meerdere animaties op een element** zetten, maar niet als deze dezelfde *property* animeren. Nou blijkt dat `translateX()` en `translateY()` wel als een dezelfde gelden. Dit was snel opgelost door er nog een *div*je omheen te zetten met de andere animatie.
 2. Wanneer een ***reversed* animatie gepauzeerd** wordt en de *reverse* er af wordt gehaald springt die naar de positie waar die zou zijn als de animatie niet *reversed* was afgespeeld.
 
-|<video src="https://joppekoops.github.io/CSS-to-the-Rescue/readme-images/joystick-try_1.mov"/>|<video src="https://joppekoops.github.io/CSS-to-the-Rescue/readme-images/joystick-try_1-issue.mov"/>|
-| --- | --- |
-| Dit werkt! | Maar dit helaas niet |
+**Dit werkt:**
+
+https://github.com/joppekoops/CSS-to-the-Rescue/assets/112714380/b7191a2f-f196-48bf-91d4-c853a9eb6d04
+
+**Maar dit helaas niet:**
+
+https://github.com/joppekoops/CSS-to-the-Rescue/assets/112714380/0854d24d-f781-4e47-b2dd-14bd46d60344
 
 Om dit nog op te lossen heb ik gezocht naar een CodePen waar het wel werkt. Deze lijkt op wat ik wil doen:
 https://codepen.io/jkantner/pen/abOBdgV
