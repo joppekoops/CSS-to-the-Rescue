@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	outline: 1px solid lime;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 	perspective: 100em;
 	transform-style: preserve-3d;
 	pointer-events: none;
-
+	margin: 0;
 	background-image: radial-gradient(ellipse at center, #eff, #9bf);
 }
 
@@ -61,32 +62,19 @@ section:first-of-type:before {
 
 /* red square in screen */
 section:first-of-type div:first-of-type {
-	--speed: 10s;
-	--x-speed: calc(var(--speed) / 9 * 16);
-	--y-speed: var(--speed);
-
-	animation-name: move-graphic-y;
-	animation-duration: var(--y-speed);
-	animation-timing-function: linear;
-	animation-fill-mode: both;
-	animation-play-state: paused;
-	/*Start the animation halfway through.*/
-	animation-delay: calc(var(--y-speed) / -2);
+	--speed: calc(5s * 9 / 16);
+	transform: translateY(calc(50cqh - 50%));
+	transition: transform 9000000s linear;
 
 	& div {
+		--speed: 5s;
 		aspect-ratio: 1;
 /*		background: red;*/
 		width: 3rem;
 		font-size: 3em;
 		line-height: 1;
 
-		animation-name: move-graphic-x;
-		animation-duration: var(--x-speed);
-		animation-timing-function: linear;
-		animation-fill-mode: both;
-		animation-play-state: paused;
-		/*Start the animation halfway through.*/
-		animation-delay: calc(var(--x-speed) / -2);
+		transform: translateX(calc(50cqw - 50%));
 	}
 }
 
@@ -161,14 +149,14 @@ section:nth-of-type(2) div:nth-of-type(1) div {
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(1):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: running;
-		animation-direction: reverse;
+	& section:nth-of-type(1) > div:first-of-type {
+		transform: translateY(calc(0cqh - 0%));
+		transition: transform var(--speed) linear;
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: running;
-			animation-direction: reverse;
+			transform: translateX(calc(0cqw - 0%));
+			transition: transform var(--speed) linear;
 		}
 	}
 
@@ -182,14 +170,13 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(2):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: running;
-		animation-direction: reverse;
+	& section:nth-of-type(1) > div:first-of-type {
+		transform: translateY(calc(0cqh - 0%));
+		transition: transform var(--speed) linear;
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: paused;
-			animation-direction: ;
+
 		}
 	}
 
@@ -203,14 +190,14 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(3):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: running;
-		animation-direction: reverse;
+	& section:nth-of-type(1) > div:first-of-type {
+		transform: translateY(calc(0cqh - 0%));
+		transition: transform var(--speed) linear;
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: running;
-			animation-direction: normal;
+			transform: translateX(calc(100cqw - 100%));
+			transition: transform var(--speed) linear;
 		}
 	}
 
@@ -224,14 +211,12 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(4):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: paused;
-		animation-direction: ;
+	& section:nth-of-type(1) > div:first-of-type {
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: running;
-			animation-direction: reverse;
+			transform: translateX(calc(0cqw - 0%));
+			transition: transform var(--speed) linear;
 		}
 	}
 
@@ -245,14 +230,12 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(6):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: paused;
-		animation-direction: ;
+	& section:nth-of-type(1) > div:first-of-type {
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: running;
-			animation-direction: ;
+			transform: translateX(calc(100cqw - 100%));
+			transition: transform var(--speed) linear;
 		}
 	}
 
@@ -262,18 +245,18 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 	}
 }
 
-/*Center left buttton*/
+/*Bottom left buttton*/
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(7):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: running;
-		animation-direction: ;
+	& section:nth-of-type(1) > div:first-of-type {
+		transform: translateY(calc(100cqh - 100%));
+		transition: transform var(--speed) linear;
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: running;
-			animation-direction: reverse;
+			transform: translateX(calc(0cqw - 0%));
+			transition: transform var(--speed) linear;
 		}
 	}
 
@@ -287,14 +270,13 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(8):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: running;
-		animation-direction: ;
+	& section:nth-of-type(1) > div:first-of-type {
+		transform: translateY(calc(100cqh - 100%));
+		transition: transform var(--speed) linear;
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: paused;
-			animation-direction: ;
+
 		}
 	}
 
@@ -308,14 +290,14 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(9):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) div:first-of-type {
-		animation-play-state: running;
-		animation-direction: ;
+	& section:nth-of-type(1) > div:first-of-type {
+		transform: translateY(calc(100cqh - 100%));
+		transition: transform var(--speed) linear;
 
 		/*X direction animation*/
 		& div {
-			animation-play-state: running;
-			animation-direction: ;
+			transform: translateX(calc(100cqw - 100%));
+			transition: transform var(--speed) linear;
 		}
 	}
 
