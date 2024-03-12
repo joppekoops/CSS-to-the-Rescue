@@ -109,3 +109,12 @@ Ik ga beginnen met het steeltje maken voor de *joystick* en het aanpassen van de
 - Het kan ook door de animaties bij elkaar op te tellen met *animation compositions*.
 
 Iets anders wat ik nog toe kan voegen is kleine animaties op de *joystick*. Bijvoorbeeld dat als die terugspringt dat die dan even *bounced*. Dit kan met CSS *linear timing functions*: `linear()`.
+
+
+
+## 🔧 *Joystick* verbeteren
+
+### ⚙️ Nieuwe functionaliteit
+De nieuwe werking van het verplaatsen was niet zo ingewikkeld om toe te passen. Veel paste in de code die ik al had. De bestaande animaties kon ik verwijderen, want die had ik niet meer nodig.
+
+Nu is het wel mogelijk om in beide richtingen te bewegen. Een nadeel is wel dat hoe dichter je al bij een kant zit, hoe langzamer die er heen beweegt.
