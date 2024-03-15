@@ -118,3 +118,76 @@ Iets anders wat ik nog toe kan voegen is kleine animaties op de *joystick*. Bijv
 De nieuwe werking van het verplaatsen was niet zo ingewikkeld om toe te passen. Veel paste in de code die ik al had. De bestaande animaties kon ik verwijderen, want die had ik niet meer nodig.
 
 Nu is het wel mogelijk om in beide richtingen te bewegen. Een nadeel is wel dat hoe dichter je al bij een kant zit, hoe langzamer die er heen beweegt.
+
+### 🏑 Het steeltje
+Simpel gezien is het steeltje van de *joystick* een kleine cilinder. Nou is een rond 3D object in CSS niet zo simpel. Je kan niet echt gebogen vlakken maken, dus het idee is om veel rechte vlakjes als koordes in een cirkel te zetten.
+
+De circel wordt gegeven door een straal. Aan de hand van die straal kan ik vervolgens berekenen wat de breedte van de vlakjes moet zijn door sinus te gebruiken:
+
+```CSS
+ul {
+	--face-width: calc(2 * var(--radius) * sin(360deg / var(--faces) / 2));
+}
+```
+
+Hierin is 360° gedeeld door het aantal vlakken de hoek van een vlakje. Deze deel ik door twee zodat ik een rechthoekige driehoek maak van een kant van de driehoek tussen twee stralen en de koorde. Hierin weet ik de straal en de hoek, dus kan ik met sinus de overstaande zijde berekenen door de straal / de schuine zijde keer de sinus van de hoek te doen. Zie ook de volgende tekening:
+
+![Tekening van berekening](./readme-images/math.webp)
+
+Dit ging redelijk makkelijk. Vervolgens heb ik alle vlakjes gedraaid tot een bepaalde hoek, door weer 360° te delen door het aantal vlakjes. Daarna heb ik alle vlakjes de lengte van de straal naar buiten verplaatst. Dit lijkt eerst goed te gaan, maar zodra ik een boven en onderkant had toegevoegd, zag ik het probleem: de vlakjes staken uit, waardoor er spleten ontstonden.
+
+![Cilinder met gaten](./readme-images/cilinder-met-gaten.webp)
+
+Dit kwam omdat de vlakjes iets naar binnen moesten staan, zodat de uiteinden op de straal kwamen te staan. Deze afstand kon ik gemakkelijk op een zelfde manier berekenen als de breedte van de vlakjes, maar dan nu met cosinus:
+
+```CSS
+ul {
+	 --face-distance: calc(var(--radius) * cos(360deg / var(--faces) / 2));
+}
+```
+
+Ook moest er nog wat schaduw op het steeltje. Dit heb ik gedaan door elk vlakje een gradient te geven, die steeds iets donker werd. De gradient van elk vlakje moest wel weer op de volgende aansluiten. Hierdoor krijg je de volgende code:
+
+```CSS
+li {
+	background-image: linear-gradient(to right, hsl(var(--h), var(--s), calc(var(--l) * .8)), hsl(var(--h), var(--s), calc(var(--l) * .75)));
+}
+```
+
+Zie deze CodePen: https://codepen.io/jkhvacmd/pen/MWRyXLO
+
+Deze code was wel erg lang en herhaalt veel, dus na een puzzeltje heb ik er de volgende code van gemaakt, waarin aan de hand van de index van het vlakje de kleur en positie wordt berekend:
+
+```CSS
+li {
+	transform: rotateY(calc(360deg / var(--faces) * var(--index))) translateZ(var(--face-distance));
+  		background-image: 
+  			linear-gradient(
+	  			to right, 
+	  			hsl(
+	  				var(--h), 
+	  				var(--s), 
+	  				calc(var(--l) * (((abs((var(--index) - 1) - .5 * var(--faces)) / var(--faces) - .5)) + 1))
+	  			), 
+	  			hsl(
+	  				var(--h), 
+	  				var(--s), 
+	  				calc(var(--l) * (((abs((var(--index) + 0) - .5 * var(--faces)) / var(--faces) - .5)) + 1))
+	  			)
+
+  			)
+  		;
+}
+```
+
+https://codepen.io/jkhvacmd/pen/yLrJemN
+
+Omdat ik hier gebruik maak van ```abs()``` werkt dit helaas alleen in Firefox. Helaas werken andere dingen die ik nodig heb juist niet in Firefox, dus hier zou ik het liefst nog een oplossing voor vinden.
+
+
+
+## De titel
+
+
+
+## Responsive
