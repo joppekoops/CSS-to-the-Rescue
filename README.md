@@ -73,7 +73,7 @@ https://github.com/joppekoops/CSS-to-the-Rescue/assets/112714380/b7191a2f-f196-4
 
 https://github.com/joppekoops/CSS-to-the-Rescue/assets/112714380/0854d24d-f781-4e47-b2dd-14bd46d60344
 
-Om dit nog op te lossen heb ik gezocht naar een CodePen waar het wel werkt. Deze lijkt op wat ik wil doen:
+Om dit nog op te lossen heb ik gezocht naar een *CodePen* waar het wel werkt. Deze lijkt op wat ik wil doen:
 https://codepen.io/jkantner/pen/abOBdgV
 
 Deze is wel in *Sass* geschreven en de gecompileerde CSS is heel erg lang. Sanne heeft het voor mij geabstraheerd tot alleen de kern functionaliteit:
@@ -127,9 +127,9 @@ De nieuwe werking van het verplaatsen was niet zo ingewikkeld om toe te passen. 
 Nu is het wel mogelijk om in beide richtingen te bewegen. Een nadeel is wel dat hoe dichter je al bij een kant zit, hoe langzamer die er heen beweegt.
 
 ### 🏑 Het steeltje
-Simpel gezien is het steeltje van de *joystick* een kleine cilinder. Nou is een rond 3D object in CSS niet zo simpel. Je kan niet echt gebogen vlakken maken, dus het idee is om veel rechte vlakjes als koordes in een cirkel te zetten.
+Simpel gezien is het steeltje van de *joystick* een kleine cilinder. Nou is een rond 3D object in CSS niet zo simpel. Je kan niet echt gebogen vlakken maken, dus het idee is om veel rechte vlakjes als koorden in een cirkel te zetten.
 
-De circel wordt gegeven door een straal. Aan de hand van die straal kan ik vervolgens berekenen wat de breedte van de vlakjes moet zijn door sinus te gebruiken:
+De cirkel wordt gegeven door een straal. Aan de hand van die straal kan ik vervolgens berekenen wat de breedte van de vlakjes moet zijn door sinus te gebruiken:
 
 ```CSS
 ul {
@@ -141,11 +141,11 @@ Hierin is 360° gedeeld door het aantal vlakken de hoek van een vlakje. Deze dee
 
 ![Tekening van berekening](./readme-images/math.webp)
 
-Dit ging redelijk makkelijk. Vervolgens heb ik alle vlakjes gedraaid tot een bepaalde hoek, door weer 360° te delen door het aantal vlakjes. Daarna heb ik alle vlakjes de lengte van de straal naar buiten verplaatst. Dit lijkt eerst goed te gaan, maar zodra ik een boven en onderkant had toegevoegd, zag ik het probleem: de vlakjes staken uit, waardoor er spleten ontstonden.
+Dit ging redelijk makkelijk. Vervolgens heb ik alle vlakjes gedraaid tot een bepaalde hoek, door weer 360° te delen door het aantal vlakjes. Daarna heb ik alle vlakjes de lengte van de straal naar buiten verplaatst. Dit lijkt eerst goed te gaan, maar zodra ik een boven- en onderkant had toegevoegd, zag ik het probleem: de vlakjes staken uit, waardoor er spleten ontstonden.
 
 ![Cilinder met gaten](./readme-images/cilinder-met-gaten.webp)
 
-Dit kwam omdat de vlakjes iets naar binnen moesten staan, zodat de uiteinden op de straal kwamen te staan. Deze afstand kon ik gemakkelijk op een zelfde manier berekenen als de breedte van de vlakjes, maar dan nu met cosinus:
+Dit kwam omdat de vlakjes iets naar binnen moesten staan, zodat de uiteinden op de straal kwamen te staan. Deze afstand kon ik gemakkelijk op eenzelfde manier berekenen als de breedte van de vlakjes, maar dan nu met cosinus:
 
 ```CSS
 ul {
@@ -161,7 +161,7 @@ li {
 }
 ```
 
-Zie deze CodePen: https://codepen.io/jkhvacmd/pen/MWRyXLO
+Zie deze *CodePen*: https://codepen.io/jkhvacmd/pen/MWRyXLO
 
 Deze code was wel erg lang en herhaalt veel, dus na een puzzeltje heb ik er de volgende code van gemaakt, waarin aan de hand van de index van het vlakje de kleur en positie wordt berekend:
 
@@ -195,18 +195,18 @@ Omdat ik hier gebruik maak van ```abs()``` werkt dit helaas alleen in Firefox. H
 ## 👨‍💻 Voortgang 3 (15-03-2024)
 Vandaag hebben we weer gekeken naar wat iedereen had gemaakt. Veel is al bijna af.
 
-Verder heb ik nog uitgelegd aan de anderen hoe ik mijn cilinder precies heb gemaakt aan de hand van mijn codepen. Ook had Sanne de oplossing voor het probleem met ```abs()```. In Chrome staat dit namelijk achter een flag (Experimental Web Platform features), dus die heb ik aangezet.
+Verder heb ik nog uitgelegd aan de anderen hoe ik mijn cilinder precies heb gemaakt aan de hand van mijn *CodePen*. Ook had Sanne de oplossing voor het probleem met ```abs()```. In Chrome staat dit namelijk achter een vlag (Experimental Web Platform features), dus die heb ik aangezet.
 
 
 ## 📢 De titel
-Voor de titel wilde ik iets dat van metaal lijkt te zijn. Het effect wat ik heb gemaakt, bestaat uit 3 lagen van gradients om samen een metaal effect te maken.
+Voor de titel wilde ik iets wat van metaal lijkt te zijn. Het effect wat ik heb gemaakt, bestaat uit 3 lagen van *gradients* om samen een metaaleffect te maken.
 
 | ![titel laag 1 met streepjes](./readme-images/titel_1.webp) | ![titel laag 2 met belichting](./readme-images/titel_2.webp) | ![titel laag 3 met reflectie](./readme-images/titel_3.webp) | ![titel laag 4 met rand](./readme-images/titel_4.webp) |
 | --- | --- | --- | --- |
 | Eerste laag: streepjes voor het geborstelde effect | Tweede laag: wit naar transparant voor belichting | Derde laag: witte streep voor licht reflectie | Vierde laag: 2 *drop-shadow* filters voor rand met glimmertje |
 
 ### 🎞️ Proberen te animeren
-Na de thema sessie over film titels in CSS wilde ik mijn titel ook animeren. Ik had daarvoor de volgende code geschreven: 
+Na de themasessie over film titels in CSS wilde ik mijn titel ook animeren. Ik had daarvoor de volgende code geschreven: 
 
 ```CSS
 header span {
@@ -227,11 +227,11 @@ header span {
 }
 ```
 
-Dit werkte helaas niet samen met de metaal textuur die ik de tekst had gegeven. Het was het een of het ander, dus heb ik toch voor het metaal gekozen.
+Dit werkte helaas niet samen met de metaaltextuur die ik de tekst had gegeven. Het was het een of het ander, dus heb ik toch voor het metaal gekozen.
 
 
 ## 📱↔️💻 Responsive
-Met de titel er bij was het ook belangrijk om het geheel een beetje meer responsive te maken. Nu verdween de titel op klein scherm achter de controller. Daarnaast was er op groot scherm veel ruimte aan de linker en rechter kant. Daarom heb ik twee dingen aangepast:
+Met de titel er bij was het ook belangrijk om het geheel een beetje meer *responsive* te maken. Nu verdween de titel op klein scherm achter de controller. Daarnaast was er op groot scherm veel ruimte aan de linker- en rechterkant. Daarom heb ik twee dingen aangepast:
 
-1. De titel komt op klein scherm bovenaan te staan. Daarbij heb ik de groote afhankelijk gemaakt van de scherm breedte of hoogte, afhankelijk van waar de titel staat.
-2. De mixer wordt op groot scherm 2 kolommen breed. Hierdoor worden alle elementen op de mixer automatisch herorderd om naast elkaar te gaan staan.
+1. De titel komt op klein scherm bovenaan te staan. Daarbij heb ik de grootte afhankelijk gemaakt van de schermbreedte of -hoogte, afhankelijk van waar de titel staat.
+2. De mixer wordt op groot scherm 2 kolommen breed. Hierdoor worden alle elementen op de mixer automatisch herordend om naast elkaar te gaan staan.
