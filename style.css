@@ -60,31 +60,39 @@ h1 {
 	font-size: clamp(2rem, 9vw, 6rem);
 	text-align: center;
 	font-family: Verdana, Arial, sans-serif;
-	filter: drop-shadow(.1rem .1rem #222) drop-shadow(-.1rem -.1rem #666) drop-shadow(-.05rem .05rem #79f) blur(.3px) brightness(1.05);
-	-webkit-background-clip: text;
+	display: flex;
+	background-clip: text;
 	color: transparent;
+	filter: drop-shadow(.1rem .1rem #222) drop-shadow(-.1rem -.1rem #666) drop-shadow(-.05rem .05rem #79f) blur(.3px) brightness(1.05);
 	background-image: 
 		linear-gradient(-45deg, #fff0 60%, #ffff 60%, #ffff 70%, #fff0 70%),
 		radial-gradient(at 30% 30%, #ffff, #0000 100%),
 		repeating-linear-gradient(-20deg, #89a 0px, #bcd 1px, #fff 1px, #bcd 2px);
+	animation: fade 2s both;
 }
 
-/*header span {
-	animation: fade-in 2s calc(var(--index) * .1s) both;
+header span {
+	animation: move 1s calc(var(--index) * .1s) both;
+
 }
 
-@keyframes fade-in {
+@keyframes fade {
 	0% {
-		opacity: 0;
-		filter: blur(10em);
-		transform: translateX(10em);
+		filter: drop-shadow(.1rem .1rem #222) drop-shadow(-.1rem -.1rem #666) drop-shadow(-.05rem .05rem #79f) blur(100px) brightness(1.05);
 	}
 	100% {
-		opacity: 1;
-		filter: blur(0);
-		transform: translateX(0em);
+		filter: drop-shadow(.1rem .1rem #222) drop-shadow(-.1rem -.1rem #666) drop-shadow(-.05rem .05rem #79f) blur(.3px) brightness(1.05);
 	}
-}*/
+}
+
+@keyframes move {
+	0% {
+		margin-top: 100vh;
+	}
+	100% {
+		margin-top: 0em;
+	}
+}
 
 @media (width > 920px) {
 	header {
@@ -142,12 +150,22 @@ h2 {
 	text-shadow: .1rem .1rem 0 black;
 }
 
+label {
+	font-family: Verdana, Arial, sans-serif;
+	color: #dde;
+	font-size: .8em;
+	font-weight: 400;
+	grid-column: 1/-1;
+	margin: 0 0 .5em 0;
+	text-shadow: .1rem .1rem 0 black;
+}
+
 section {
 	display: grid;
 }
 
 /* screen */
-section:first-of-type {
+main > section:first-of-type {
 	--aspect-ratio: 16 / 9;
 	aspect-ratio: var(--aspect-ratio);
 	width: calc(80vw - 4rem);
@@ -161,7 +179,7 @@ section:first-of-type {
 	display: block;
 }
 
-section:first-of-type:before {
+main > section:first-of-type:before {
 	display: block;
 	content: '';
 	width: 100%;
@@ -170,6 +188,7 @@ section:first-of-type:before {
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 999;
 }
 
 section:first-of-type h2 {
@@ -179,7 +198,7 @@ section:first-of-type h2 {
 }
 
 /* graphic */
-section:first-of-type div:first-of-type {
+main > section:first-of-type div:first-of-type {
 	--speed: calc(5s * var(--aspect-ratio));
 	transform: translateY(calc(50cqh - 50%));
 	transition: transform 9000000s linear;
@@ -194,6 +213,15 @@ section:first-of-type div:first-of-type {
 
 		transform: translateX(calc(50cqw - 50%));
 	}
+}
+
+/* video */
+
+section:first-of-type video {
+	position: absolute;
+	width: 100cqw;
+	inset: 0;
+	z-index: -1;
 }
 
 /*Animations for moving a graphic*/
@@ -217,8 +245,12 @@ section:first-of-type div:first-of-type {
 	}
 }*/
 
+/* graphics controls section */
+
 section:nth-of-type(2) {
 	transform-style: preserve-3d;
+	grid-template-columns: max-content max-content;
+	column-gap: 1em;
 }
 
 /* the joystick */
@@ -327,10 +359,10 @@ section:nth-of-type(2) div:nth-of-type(1) {
 }
 
 /*Top left button*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(1):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(1):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 		transform: translateY(calc(0cqh - 0%));
 		transition: transform var(--speed) linear;
 
@@ -348,10 +380,10 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 }
 
 /*Top center button*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(2):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(2):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 		transform: translateY(calc(0cqh - 0%));
 		transition: transform var(--speed) linear;
 
@@ -368,10 +400,10 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 }
 
 /*Top right button*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(3):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(3):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 		transform: translateY(calc(0cqh - 0%));
 		transition: transform var(--speed) linear;
 
@@ -389,10 +421,10 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 }
 
 /*Center left button*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(4):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(4):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 
 		/*X direction animation*/
 		& div {
@@ -408,10 +440,10 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 }
 
 /*Center right buttton*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(6):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(6):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 
 		/*X direction animation*/
 		& div {
@@ -427,10 +459,10 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 }
 
 /*Bottom left buttton*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(7):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(7):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 		transform: translateY(calc(100cqh - 100%));
 		transition: transform var(--speed) linear;
 
@@ -448,10 +480,10 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 }
 
 /*Bottom center button*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(8):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(8):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 		transform: translateY(calc(100cqh - 100%));
 		transition: transform var(--speed) linear;
 
@@ -468,10 +500,10 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 }
 
 /*Bottom right button*/
-body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(9):hover) {
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(9):hover) {
 
 	/*Y direction animation*/
-	& section:nth-of-type(1) > div:first-of-type {
+	& > section:nth-of-type(1) > div:first-of-type {
 		transform: translateY(calc(100cqh - 100%));
 		transition: transform var(--speed) linear;
 
@@ -486,4 +518,39 @@ body:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-ty
 	& section:nth-of-type(2) div:nth-of-type(1) div {
 		transform: translateZ(-.5em) rotateX(-31.5deg) rotateY(31.5deg) translateZ(2.5em);
 	}
+}
+
+
+input {
+	pointer-events: all;
+}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	writing-mode: vertical-lr;
+	color: white;
+	background-color: transparent;
+	height: 8em;
+	width: 2em;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background: linear-gradient(to top, #555 30%, #999 30%, #111 70%, #555 70%);
+	border-radius: .2em;
+	height: 1.5em;
+	width: 2.5em;
+	box-shadow: -1px .5px #222, -2px 1px #222, -3px 1.5px #222, -4px 2px #222, -5px 2.5px #222, -6px 3px #222;
+	margin-left: -.6em;
+	margin-bottom: .5em;
+	filter: drop-shadow(-2px 2px 2px black);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 100%;
+  width: .5em;
+  cursor: pointer;
+  background: #111;
+  border-radius: .5em;
+  box-shadow: inset -1px -1px 3px #333;
 }

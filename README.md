@@ -1,8 +1,10 @@
 # CSS-to-the-Rescue
 Dit is een opdracht voor het vak 'CSS to the Rescue' van de minor 'Web Design & Development': https://everythingweb.org/
 
+Bekijk mijn resultaat op: https://joppekoops.github.io/CSS-to-the-Rescue/
 
-## De opdracht
+
+## 👨‍🏫 De opdracht
 Voor het vak kon ik kiezen uit 4 verschillende opdrachten: Vuurwerk, *Control panel*, Rubik's kubus of papieren vliegtuig. Dit moest worden uitgewerkt door alleen gebruik te maken van HTML en CSS.
 
 Ik heb voor het *control panel* gekozen, waarbij ik een bestaande control panel heb uitgezocht, waarvan ik delen ga nameken met CSS. Het *control panel* moet interactief zijn, met duidelijke *controls*, *states* en *feedback*. Bovendien moet het daadwerkelijk iets aansturen.

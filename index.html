@@ -8,7 +8,26 @@
 </head>
 <body>
 	<header>
-		<h1>Joppe's live mixer</h1>
+		<h1>
+		<span>J</span>
+	<span>o</span>
+<span>p</span>
+<span>p</span>
+<span>e</span>
+<span>'</span>
+<span>s</span>
+<span>&nbsp;</span>
+<span>l</span>
+<span>i</span>
+<span>v</span>
+<span>e</span>
+<span>&nbsp;</span>
+<span>m</span>
+<span>i</span>
+<span>x</span>
+<span>e</span>
+<span>r</span>
+</h1>
 	</header>
 	<!-- Controller -->
 	<main>
@@ -20,11 +39,16 @@
 			<div>
 				<div>🏞️</div>
 			</div>
+			<video autoplay muted loop>
+				<source src="./media/camera_1.mp4" type="video/mp4">
+			</video>
 		</section>
 		<!-- Control Area 1 -->
 		<section> 
 			<h2>Graphic controls</h2>
 			<!-- Joystick -->
+			<section>
+			<label>Position</label>
 			<div>
 				<button></button>
 				<button></button>
@@ -71,6 +95,16 @@
 				<button></button>
 				<button></button>
 			</div>
+			</section>
+			<!-- Opacity slider -->
+			<section>
+			<label>Opacity</label>
+			<input type="range" value="100" list="opacity-range">
+			<datalist id="opacity-range">
+				<option value="0"></option>
+				<option value="100"></option>
+			</datalist>
+			</section>
 		</section>
 	</main>
 </body>
