@@ -1,6 +1,11 @@
 # CSS-to-the-Rescue
+Dit is een opdracht voor het vak 'CSS to the Rescue' van de minor 'Web Design & Development': https://everythingweb.org/
+
 
 ## De opdracht
+Voor het vak kon ik kiezen uit 4 verschillende opdrachten: Vuurwerk, *Control panel*, Rubik's kubus of papieren vliegtuig. Dit moest worden uitgewerkt door alleen gebruik te maken van HTML en CSS.
+
+Ik heb voor het *control panel* gekozen, waarbij ik een bestaande control panel heb uitgezocht, waarvan ik delen ga nameken met CSS. Het *control panel* moet interactief zijn, met duidelijke *controls*, *states* en *feedback*. Bovendien moet het daadwerkelijk iets aansturen.
 
 ## 💡 Mijn Idee
 Voor mijn opdracht gebruik ik de volgende live video mixer als inspiratie voor mijn digitale control panel:
@@ -184,6 +189,11 @@ https://codepen.io/jkhvacmd/pen/yLrJemN
 
 Omdat ik hier gebruik maak van ```abs()``` werkt dit helaas alleen in Firefox. Helaas werken andere dingen die ik nodig heb juist niet in Firefox, dus hier zou ik het liefst nog een oplossing voor vinden.
 
+
+## 👨‍💻 Voortgang 3 (15-03-2024)
+Vandaag hebben we weer gekeken naar wat iedereen had gemaakt. Veel is al bijna af.
+
+Verder heb ik nog uitgelegd aan de anderen hoe ik mijn cilinder precies heb gemaakt aan de hand van mijn codepen. Ook had Sanne de oplossing voor het probleem met ```abs()```. In Chrome staat dit namelijk achter een flag (Experimental Web Platform features), dus die heb ik aangezet.
 
 
 ## 📢 De titel
