@@ -193,5 +193,29 @@ Voor de titel wilde ik iets dat van metaal lijkt te zijn. Het effect wat ik heb 
 | --- | --- | --- | --- |
 | Eerste laag: streepjes voor het geborstelde effect | Tweede laag: wit naar transparant voor belichting | Derde laag: witte streep voor licht reflectie | Vierde laag: 2 *drop-shadow* filters voor rand met glimmertje |
 
+### 🎞️ Proberen te animeren
+Na de thema sessie over film titels in CSS wilde ik mijn titel ook animeren. Ik had daarvoor de volgende code geschreven: 
+
+```CSS
+header span {
+	animation: fade-in 2s calc(var(--index) * .1s) both;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		filter: blur(10em);
+		transform: translateX(10em);
+	}
+	100% {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateX(0em);
+	}
+}
+```
+
+Dit werkte helaas niet samen met de metaal textuur die ik de tekst had gegeven. Het was het een of het ander, dus heb ik toch voor het metaal gekozen.
+
 
 ## Responsive

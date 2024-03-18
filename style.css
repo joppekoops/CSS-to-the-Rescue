@@ -57,10 +57,34 @@ header {
 
 h1 {
 	margin: 1rem;
-	font-size: clamp(2rem, 8vw, 6rem);
+	font-size: clamp(2rem, 9vw, 6rem);
+	text-align: center;
 	font-family: Verdana, Arial, sans-serif;
-	filter: drop-shadow(.1rem .1rem #222) drop-shadow(-.1rem -.1rem #666);
+	filter: drop-shadow(.1rem .1rem #222) drop-shadow(-.1rem -.1rem #666) drop-shadow(-.05rem .05rem #79f) blur(.3px) brightness(1.05);
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: 
+		linear-gradient(-45deg, #fff0 60%, #ffff 60%, #ffff 70%, #fff0 70%),
+		radial-gradient(at 30% 30%, #ffff, #0000 100%),
+		repeating-linear-gradient(-20deg, #89a 0px, #bcd 1px, #fff 1px, #bcd 2px);
 }
+
+/*header span {
+	animation: fade-in 2s calc(var(--index) * .1s) both;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		filter: blur(10em);
+		transform: translateX(10em);
+	}
+	100% {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateX(0em);
+	}
+}*/
 
 @media (width > 920px) {
 	header {
@@ -70,16 +94,11 @@ h1 {
 		left: unset;
 		bottom: 0;
 	}
-}
 
-header h1 {
-	-webkit-background-clip: text;
-	color: transparent;
-	background-image: 
-		linear-gradient(-45deg, #fff0 60%, #ffff 60%, #ffff 70%, #fff0 70%),
-		radial-gradient(at 30% 30%, #ffff, #0000 100%),
-		repeating-linear-gradient(-20deg, #888 0px, #ddd 1px, #fff 1px, #ddd 2px);
-	filter: glow(1.1);
+	header h1 {
+		text-align: left;
+		font-size: clamp(2rem, 9vh, 6rem);
+	}
 }
 
 /* the whole mixer */
