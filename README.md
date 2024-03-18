@@ -186,7 +186,7 @@ Omdat ik hier gebruik maak van ```abs()``` werkt dit helaas alleen in Firefox. H
 
 
 
-## De titel
+## 📢 De titel
 Voor de titel wilde ik iets dat van metaal lijkt te zijn. Het effect wat ik heb gemaakt, bestaat uit 3 lagen van gradients om samen een metaal effect te maken.
 
 | ![titel laag 1 met streepjes](./readme-images/titel_1.webp) | ![titel laag 2 met belichting](./readme-images/titel_2.webp) | ![titel laag 3 met reflectie](./readme-images/titel_3.webp) | ![titel laag 4 met rand](./readme-images/titel_4.webp) |
@@ -218,4 +218,8 @@ header span {
 Dit werkte helaas niet samen met de metaal textuur die ik de tekst had gegeven. Het was het een of het ander, dus heb ik toch voor het metaal gekozen.
 
 
-## Responsive
+## 📱↔️💻 Responsive
+Met de titel er bij was het ook belangrijk om het geheel een beetje meer responsive te maken. Nu verdween de titel op klein scherm achter de controller. Daarnaast was er op groot scherm veel ruimte aan de linker en rechter kant. Daarom heb ik twee dingen aangepast:
+
+1. De titel komt op klein scherm bovenaan te staan. Daarbij heb ik de groote afhankelijk gemaakt van de scherm breedte of hoogte, afhankelijk van waar de titel staat.
+2. De mixer wordt op groot scherm 2 kolommen breed. Hierdoor worden alle elementen op de mixer automatisch herorderd om naast elkaar te gaan staan.
