@@ -187,7 +187,15 @@ Omdat ik hier gebruik maak van ```abs()``` werkt dit helaas alleen in Firefox. H
 
 
 ## De titel
+Voor de titel wilde ik iets dat van metaal lijkt te zijn. Het effect wat ik heb gemaakt, bestaat uit 3 lagen van gradients om samen een metaal effect te maken.
 
+| ![titel laag 1 met streepjes](./readme-images/titel_1.webp) | ![titel laag 2 met belichting](./readme-images/titel_2.webp) |
+| --- | --- |
+| Eerste laag: streepjes voor het geborstelde effect | Tweede laag: wit naar transparant voor belichting |
+
+| ![titel laag 3 met reflectie](./readme-images/titel_3.webp) | ![titel laag 4 met rand](./readme-images/titel_4.webp) |
+| --- | --- |
+| Derde laag: witte streep voor licht reflectie | Vierde laag: 2 *drop-shadow* filters voor rand met glimmertje|
 
 
 ## Responsive
