@@ -235,3 +235,14 @@ Met de titel er bij was het ook belangrijk om het geheel een beetje meer *respon
 
 1. De titel komt op klein scherm bovenaan te staan. Daarbij heb ik de grootte afhankelijk gemaakt van de schermbreedte of -hoogte, afhankelijk van waar de titel staat.
 2. De mixer wordt op groot scherm 2 kolommen breed. Hierdoor worden alle elementen op de mixer automatisch herordend om naast elkaar te gaan staan.
+
+
+## ⛲️ Bronnen
+- Panasonic Corporation of North America. (z.d.). AV-UHS500 4K 12G-SDI / HDMI Professional Live Video Production Switcher. Panasonic. https://na.panasonic.com//us/sites/default/files/styles/product_main/public/2020-01/av-uhs500_4k_switcher_with_12g-sdi_inputs_and_hdmi_for_live_video_production.png?itok=GZBrR5Y5%201x,%20/us/sites/default/files/styles/product_main_2x/public/2020-01/av-uhs500_4k_switcher_with_12g-sdi_inputs_and_hdmi_for_live_video_production.png?itok=k5FDN9kj%202x
+- CSS Grid auto fit with max-content. (2019). Stack Overflow. https://stackoverflow.com/questions/52764726/css-grid-auto-fit-with-max-content
+- abs() - CSS: Cascading Style Sheets (2023, 5 augustus). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/abs
+- Tudor, A. (2020, 30 januari). Things to Watch Out for When Working with CSS 3D | CSS-Tricks. CSS-Tricks. https://css-tricks.com/things-watch-working-css-3d/
+- Coyier, C. (2022, 12 oktober). filter. CSS-Tricks. https://css-tricks.com/almanac/properties/f/filter/
+- Green Screen Stock Videos by Vecteezy. https://www.vecteezy.com/free-videos/green-screen
+- Stern, D. (2020, 2 juni). Styling Cross-Browser Compatible Range Inputs with CSS. CSS-Tricks. https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+- How to reverse the direction in HTML5 range input? (2016). Stack Overflow. https://stackoverflow.com/questions/40275891/how-to-reverse-the-direction-in-html5-range-input
