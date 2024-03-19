@@ -212,6 +212,8 @@ main > section:first-of-type div:first-of-type {
 		line-height: 1;
 
 		transform: translateX(calc(50cqw - 50%));
+
+		opacity: calc(var(--graphic-opacity) * 1%);
 	}
 }
 
@@ -530,8 +532,9 @@ input {
 }
 
 input[type="range"] {
-	-webkit-appearance: none;
+	appearance: none;
 	writing-mode: vertical-lr;
+	direction: rtl;
 	color: white;
 	background-color: transparent;
 	height: 8em;
@@ -539,7 +542,7 @@ input[type="range"] {
 }
 
 input[type=range]::-webkit-slider-thumb {
-	-webkit-appearance: none;
+	appearance: none;
 	background: linear-gradient(to top, #555 30%, #999 30%, #111 70%, #555 70%);
 	border-radius: .2em;
 	height: 1.5em;
@@ -551,10 +554,10 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-  height: 100%;
-  width: .5em;
-  cursor: pointer;
-  background: #111;
-  border-radius: .5em;
-  box-shadow: inset -1px -1px 3px #333;
+  	height: 100%;
+  	width: .5em;
+  	cursor: pointer;
+  	background: #111;
+  	border-radius: .5em;
+	box-shadow: inset -1px -1px 3px #333;
 }
