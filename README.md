@@ -253,6 +253,19 @@ input[type="slider"] {
 ```
 
 
+## 🍰 CSS @layer 
+Als laatste moest ik nog een extra CSS *architexture* techniek toepassen. Ik had eerder al gebruik gemaakt van *nesting*, dus dat had ik automatisch toegepast. Daarnaast heb ik nu *layers* gebruikt.
+
+Ik heb een aantal *layers* gemaakt voor verschillende doeleinden:
+
+1. **reset**: deze laag is voor alle standaard *styling* van de browser die ik reset.
+2. **default**: deze laag is voor standaard *styling* toe te passen zoals lettertype en tekstkleur.
+3. **theme**: in deze laag geef ik alles aan wat voor bepaalde delen anders is dan de standaard stijl.
+4. **layout**: zoals de naam al aangeeft is deze laag voor alle layout, zoals *grid*, *flex* en *position*.
+5. **components**: deze laag is voor alle *styling* die voor specifieke onderdelen anders zijn, zoals bijvoorbeeld de *joystick* of de *slider*.
+
+Ik merkte dat deze techniek in dit geval wat minder nuttig is. Omdat ik niet zoveel stijlen en delen hergebruik had ik weinig stijlen die elkaar in de weg zaten door de *cascade*. Ik zie wel dat dit erg handig kan zijn voor grote websites met veel hergebruikte componenten over veel verschillende pagina's die misschien ook nog een verschillend thema hebben.
+
 
 ## ⛲️ Bronnen
 - Panasonic Corporation of North America. (z.d.). AV-UHS500 4K 12G-SDI / HDMI Professional Live Video Production Switcher. Panasonic. https://na.panasonic.com//us/sites/default/files/styles/product_main/public/2020-01/av-uhs500_4k_switcher_with_12g-sdi_inputs_and_hdmi_for_live_video_production.png?itok=GZBrR5Y5%201x,%20/us/sites/default/files/styles/product_main_2x/public/2020-01/av-uhs500_4k_switcher_with_12g-sdi_inputs_and_hdmi_for_live_video_production.png?itok=k5FDN9kj%202x
@@ -263,3 +276,4 @@ input[type="slider"] {
 - Green Screen Stock Videos by Vecteezy. https://www.vecteezy.com/free-videos/green-screen
 - Stern, D. (2020, 2 juni). Styling Cross-Browser Compatible Range Inputs with CSS. CSS-Tricks. https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
 - How to reverse the direction in HTML5 range input? (2016). Stack Overflow. https://stackoverflow.com/questions/40275891/how-to-reverse-the-direction-in-html5-range-input
+- Suzanne, M. (2022, 19 oktober). A Complete Guide to CSS Cascade Layers | CSS-Tricks. CSS-Tricks. https://css-tricks.com/css-cascade-layers/
