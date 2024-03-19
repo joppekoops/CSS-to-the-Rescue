@@ -352,9 +352,10 @@ section:first-of-type video {
 }*/
 
 /* graphics controls section: Joystick + Opacity slider */
-
-section:nth-of-type(2) {
-	grid-template-columns: max-content max-content;
+@layer layout {
+	section:nth-of-type(2) {
+		grid-template-columns: max-content max-content;
+	}
 }
 
 @layer components {

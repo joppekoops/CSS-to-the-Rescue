@@ -2,6 +2,32 @@
 Dit is een opdracht voor het vak 'CSS to the Rescue' van de minor 'Web Design & Development': https://everythingweb.org/
 
 Bekijk mijn resultaat op: https://joppekoops.github.io/CSS-to-the-Rescue/
+Dit werkt op dit moment alleen in Chrome met de Experimental Web Platform features aan!
+
+
+## ⏩️ Snelle samenvatting door chatGPT
+Hieronder volgt een overzicht van het proces en de gebruikte technieken:
+
+### Proces
+- **Opdrachtkeuze**: De keuze viel op het *control panel*, waarbij inspiratie werd gehaald uit een live videomixer.
+- **Ideeontwikkeling**: Belangrijke elementen waren onder meer de *joystick* en een *slider* voor video-overgangen.
+- **Voortgangsupdates**: Er werden regelmatige updates gegeven over de voortgang en de uitdagingen die werden aangepakt.
+- **Functionaliteit implementatie**: De *joystick* werd ontwikkeld met 8 richtingen en bijbehorende animaties voor interactie.
+
+### Belangrijkste Technieken
+- **3D-effecten**: Door gebruik te maken van CSS-transforms en perspectief-effecten werd een 3D-uitstraling gecreëerd.
+- **Gradients voor belichting**: Subtiele gradients werden toegepast om een realistisch belichtingsmodel te simuleren.
+- **Berekeningen met sinus en cosinus**: Om een cilindervormig 'steeltje' voor de *joystick* te maken werden trigonometrische functies gebruikt.
+- **CSS @layer**: Verschillende lagen werden gebruikt voor reset-stijlen, standaard stijlen, layout, thema's en componenten, hoewel dit in dit geval minder noodzakelijk bleek.
+
+De documentatie biedt een diepgaand inzicht in het ontwikkelingsproces en de technische uitdagingen bij het creëren van een interactieve videomixer met alleen HTML en CSS.
+
+### Belangrijkste leerpunten:
+- **3D-effect en belichting**: Gebruik van geavanceerde CSS-technieken voor het creëren van een realistisch 3D-effect, met bijzondere aandacht voor belichting met gradients.
+- **Structurering van code**: Inzicht verkregen in het structureren van CSS-code door het gebruik van @layers en nesting, waardoor de codebase georganiseerd werd en complexiteit verminderd werd.
+- **Oplossingen voor conflicten**: Het vinden van oplossingen voor conflicten tussen animaties en opmaak, met name bij de titel van de mixer, vereiste het sluiten van compromissen om de gewenste opmaak te behouden.
+- **Praktische toepassing van complexe CSS**: Toepassing van complexe CSS-vereisten, zoals het ontwerpen van de joystick en het schrijven van uitgebreide selectoren voor dubbele interacties, droeg bij aan een beter begrip van CSS-architectuurtechnieken en de creatieve mogelijkheden van CSS.
+
 
 
 ## 👨‍🏫 De opdracht
@@ -241,9 +267,9 @@ Met de titel er bij was het ook belangrijk om het geheel een beetje meer *respon
 
 
 ## 🫥 *Opacity slider*
-Nadat ik snel een video had toegevoegd op het scherm wilde ik nog een extra *control* toevoegen om de zichtbaarheid van de *graphic* aan te kunnen passen. Hiervoor heb ik nog een *slider* toegevoegd. Het lastige punt zat hem niet in het 3d maken, maar juist in een simpel iets: een verticale *slider*.
+Nadat ik snel een video had toegevoegd op het scherm wilde ik nog een extra *control* toevoegen om de zichtbaarheid van de *graphic* aan te kunnen passen. Hiervoor heb ik nog een *slider* toegevoegd. Het lastige punt zat hem niet in het 3D maken, maar juist in een simpel iets: een verticale *slider*.
 
-Dit kan met ```appearance```, maar ik had er al ```appearance: none;``` op staan, zodat ik een eigen 3d styling kon toepassen. Uiteindelijk kon het met een combinatie van 2 *properties*:
+Dit kan met ```appearance```, maar ik had er al ```appearance: none;``` op staan, zodat ik een eigen 3D styling kon toepassen. Uiteindelijk kon het met een combinatie van 2 *properties*:
 
 ```CSS
 input[type="slider"] {
@@ -254,21 +280,58 @@ input[type="slider"] {
 
 
 ## 🍰 CSS @layer 
-Als laatste moest ik nog een extra CSS *architexture* techniek toepassen. Ik had eerder al gebruik gemaakt van *nesting*, dus dat had ik automatisch toegepast. Daarnaast heb ik nu *layers* gebruikt.
+Als laatste moest ik nog een extra CSS *architecture* techniek toepassen. Ik had eerder al gebruik gemaakt van *nesting*, dus dat had ik automatisch toegepast. Daarnaast heb ik nu *layers* gebruikt.
 
 Ik heb een aantal *layers* gemaakt voor verschillende doeleinden:
 
 1. **reset**: deze laag is voor alle standaard *styling* van de browser die ik reset.
 2. **default**: deze laag is voor standaard *styling* toe te passen zoals lettertype en tekstkleur.
 3. **theme**: in deze laag geef ik alles aan wat voor bepaalde delen anders is dan de standaard stijl.
-4. **layout**: zoals de naam al aangeeft is deze laag voor alle layout, zoals *grid*, *flex* en *position*.
+4. **layout**: zoals de naam al aangeeft, is deze laag voor alle lay-out, zoals *grid*, *flex* en *position*.
 5. **components**: deze laag is voor alle *styling* die voor specifieke onderdelen anders zijn, zoals bijvoorbeeld de *joystick* of de *slider*.
 
 Ik merkte dat deze techniek in dit geval wat minder nuttig is. Omdat ik niet zoveel stijlen en delen hergebruik had ik weinig stijlen die elkaar in de weg zaten door de *cascade*. Ik zie wel dat dit erg handig kan zijn voor grote websites met veel hergebruikte componenten over veel verschillende pagina's die misschien ook nog een verschillend thema hebben.
 
 
+## 📈 Het resultaat
+Het resultaat is een 3D lijkende virtuele video mixer. Om het zo 3D mogelijk te maken heb ik vooral veel geleerd van 3D in CSS en wat er wel niet mee kan. Daarom is het ook zo 3D mogelijk. Als je de mixer kantelt zie je dat niet alles 3D is.
+
+| ![resultaat van de videomixer](./readme-images/resultaat.webp) | ![video mixer een beetje gekanteld, waardoor niet alles 3D meer lijkt](./readme-images/resultaat-gekanteld.webp) |
+| --- | --- |
+| Videomixer | Video mixer beetje gekanteld |
+
+Het blijst ben ik met hoe dit 3D samen met de belichting door middel van *gradients* het op een echt product laat lijken. Deze combinatie van *fake* en echt 3D is een heel sterk middel om op een simpele manier dingen 3D te maken. Vooral ronde vormen kunnen goed worden nagebootst. Natuurlijk kan dit ook op de moeilijke manier zoals ik met het steeltje heb gedaan:
+
+```CSS
+ul {
+	--radius: .5rem; /* outer radius of the stick */
+	--length: 2.5rem; /* length of the stick */
+	--faces: 32; /* amount of faces, should be the same as in the HTML */
+
+	--face-width: calc(2 * var(--radius) * sin(360deg / var(--faces) / 2) + 1px); /* Calculate the width of a face */
+	--face-distance: calc(var(--radius) * cos(360deg / var(--faces) / 2)); /* Calculate the distance from the middle to the face: inner radius */
+}
+```
+
+Maar het meest ingewikkelde was toch wel de werking van de *joystick*. Hiervoor heb ik de meeste verschillende technieken moeten proberen (animaties die omkeerden, 2 animaties die optelden en uiteindelijk transities) die allemaal hun nadelen hadden.
+
+Waar ik uiteindelijk nog tegenaan liep, is dat sommige dingen in CSS niet samen gaan, zoals bijvoorbeeld de animatie en opmaak van de titel. Hierdoor moest ik uiteindelijk voor een mindere animatie gaan om de opmaak te kunnen behouden.
+
+![titel resultaat](./readme-images/titel-resultaat.webp)
+
+Waar ik misschien nog wel het meeste van geleerd heb, is niet per se in de browser te zien, maar gaat om het structureren van code. Vooral hoe ik nieuwe selectoren en architectuur technieken kan gebruiken. Zo weet ik nu beter hoe *@layers* en *nesting* werken, maar bijvoorbeeld ook hoe ik lange selectoren kan schrijven voor dubbele interactie:
+
+```CSS
+main:has(section:nth-of-type(2) div:nth-of-type(1):active):has(section:nth-of-type(2) div:nth-of-type(1) button:nth-child(1):hover)
+```
+
+
 ## ⛲️ Bronnen
 - Panasonic Corporation of North America. (z.d.). AV-UHS500 4K 12G-SDI / HDMI Professional Live Video Production Switcher. Panasonic. https://na.panasonic.com//us/sites/default/files/styles/product_main/public/2020-01/av-uhs500_4k_switcher_with_12g-sdi_inputs_and_hdmi_for_live_video_production.png?itok=GZBrR5Y5%201x,%20/us/sites/default/files/styles/product_main_2x/public/2020-01/av-uhs500_4k_switcher_with_12g-sdi_inputs_and_hdmi_for_live_video_production.png?itok=k5FDN9kj%202x
+- 't Hooft, S. (z.d.) d-pad button. CodePen https://codepen.io/shooft/pen/BaEabXy
+- Kantner, J. (z.d.) Pure CSS Claw Crane. Codepen https://codepen.io/jkantner/pen/abOBdgV
+- 't Hooft, S. (z.d.) crane voor joppe. Codepen https://codepen.io/shooft/pen/bGJVjBM
+- 't Hooft, S. (z.d.) crane2 voor joppe. Codepen https://codepen.io/shooft/pen/zYXvLoO
 - CSS Grid auto fit with max-content. (2019). Stack Overflow. https://stackoverflow.com/questions/52764726/css-grid-auto-fit-with-max-content
 - abs() - CSS: Cascading Style Sheets (2023, 5 augustus). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/abs
 - Tudor, A. (2020, 30 januari). Things to Watch Out for When Working with CSS 3D | CSS-Tricks. CSS-Tricks. https://css-tricks.com/things-watch-working-css-3d/
