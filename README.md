@@ -229,12 +229,29 @@ header span {
 
 Dit werkte helaas niet samen met de metaaltextuur die ik de tekst had gegeven. Het was het een of het ander, dus heb ik toch voor het metaal gekozen.
 
+### 🎞️ Toch nog animeren
+Nadat ik nog even met Roel had gesproken blijkt dat inderdaad veel animaties niet samen kunnen met ```background-clip```, maar met sommige *properties* kan het wel. Uiteindelijk hebben we een soortgelijke animatie kunnen maken met ```margin``` en een blur animatie op de *parent*.
+
 
 ## 📱↔️💻 Responsive
 Met de titel er bij was het ook belangrijk om het geheel een beetje meer *responsive* te maken. Nu verdween de titel op klein scherm achter de controller. Daarnaast was er op groot scherm veel ruimte aan de linker- en rechterkant. Daarom heb ik twee dingen aangepast:
 
 1. De titel komt op klein scherm bovenaan te staan. Daarbij heb ik de grootte afhankelijk gemaakt van de schermbreedte of -hoogte, afhankelijk van waar de titel staat.
 2. De mixer wordt op groot scherm 2 kolommen breed. Hierdoor worden alle elementen op de mixer automatisch herordend om naast elkaar te gaan staan.
+
+
+## 🫥 *Opacity slider*
+Nadat ik snel een video had toegevoegd op het scherm wilde ik nog een extra *control* toevoegen om de zichtbaarheid van de *graphic* aan te kunnen passen. Hiervoor heb ik nog een *slider* toegevoegd. Het lastige punt zat hem niet in het 3d maken, maar juist in een simpel iets: een verticale *slider*.
+
+Dit kan met ```appearance```, maar ik had er al ```appearance: none;``` op staan, zodat ik een eigen 3d styling kon toepassen. Uiteindelijk kon het met een combinatie van 2 *properties*:
+
+```CSS
+input[type="slider"] {
+	writing-mode: vertical-lr; /* Make the slider verticle */
+	direction: rtl; /* Reverse the slider */
+}
+```
+
 
 
 ## ⛲️ Bronnen
